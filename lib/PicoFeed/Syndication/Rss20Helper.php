@@ -112,4 +112,31 @@ class Rss20Helper
 
         return $this;
     }
+
+    /**
+     * Build author element
+     *
+     * @access public
+     * @param  DOMElement $element
+     * @param  string     $tag
+     * @param  string     $authorName
+     * @param  string     $authorEmail
+     * @return $this
+     */
+    public function buildFeedAuthor(DOMElement $element, $tag, $authorName, $authorEmail)
+    {
+        if (!empty($authorName)) {
+            $value = '';
+
+            if (!empty($authorEmail)) {
+                $value .= $authorEmail.' ('.$authorName.')';
+            } else {
+                $value = $authorName;
+            }
+
+            $this->buildNode($element, $tag, $value);
+        }
+
+        return $this;
+    }
 }

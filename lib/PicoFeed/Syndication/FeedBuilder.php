@@ -150,6 +150,23 @@ abstract class FeedBuilder
     }
 
     /**
+     * Add feed author
+     *
+     * @access public
+     * @param  string  $name
+     * @param  string  $email
+     * @param  string  $url
+     * @return $this
+     */
+    public function withFeedAuthor($name, $email = '', $url ='')
+    {
+        $this->feedAuthorName = $name;
+        $this->feedAuthorEmail = $email;
+        $this->feedAuthorUrl = $url;
+        return $this;
+    }
+
+    /**
      * Add feed item
      *
      * @access public

@@ -51,6 +51,7 @@ class Rss20FeedBuilder extends FeedBuilder
             ->buildNode($this->channelElement, 'description', $this->feedTitle)
             ->buildDate($this->channelElement, $this->feedDate)
             ->buildAuthor($this->channelElement, 'webMaster', $this->authorName, $this->authorEmail)
+            ->buildFeedAuthor($this->channelElement, 'author', $this->feedAuthorName, $this->feedAuthorEmail)
             ->buildLink($this->channelElement, $this->siteUrl)
         ;
 
